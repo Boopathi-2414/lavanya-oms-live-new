@@ -1,17 +1,5 @@
-FROM node:22-alpine AS builder
-WORKDIR /app
-ARG VITE_SUPABASE_URL
-ARG VITE_SUPABASE_ANON_KEY
-ARG VITE_AUTHORIZED_UID
-ARG VITE_ENVIRONMENT=test
-ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY VITE_AUTHORIZED_UID=$VITE_AUTHORIZED_UID VITE_ENVIRONMENT=$VITE_ENVIRONMENT
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
 FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY lavanya-oms-site.zip /tmp/site.zip
+RUN rm -rf /usr/share/nginx/html/* && cd /usr/share/nginx/html && unzip -q /tmp/site.zip && rm /tmp/site.zip
+RUN printf 'server {\n listen 80;\n root /usr/share/nginx/html;\n index index.html;\n server_tokens off;\n gzip on;\n gzip_types text/css application/javascript application/json image/svg+xml;\n location /assets/ { expires 1y; add_header Cache-Control "public, immutable"; }\n location / { add_header Cache-Control "no-store"; add_header X-Frame-Options DENY; add_header X-Content-Type-Options nosniff; try_files $uri $uri/ /index.html; }\n}\n' > /etc/nginx/conf.d/default.conf
 EXPOSE 80
-HEALTHCHECK --interval=30s --timeout=3s CMD wget -q -O /dev/null http://127.0.0.1/health || exit 1
-CMD ["nginx", "-g", "daemon off;"]
