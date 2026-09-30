@@ -1,0 +1,32 @@
+LAVANYA OMS — GO-LIVE PREFLIGHT
+Date: 2026-09-30T14:00:59.980Z   Project: pgctafxsbcvrbqbqkzer   Environment in .env: production
+
+PASS Supabase project is reachable
+
+
+PASS Login works for this email
+PASS VITE_AUTHORIZED_UID in .env matches this login
+
+Table                         no-login     logged-in
+oms_orders                    error 42501  0
+oms_payments                  error 42501  0
+oms_products                  error 42501  0
+oms_trash                     error 42501  0
+oms_fraud_list                error 42501  0
+oms_business_records          error 42501  0
+customer_profiles             error 42501  0
+oms_reconciliation_history    error 42501  0
+
+PASS oms_orders: logged-in can read (0 rows)
+PASS oms_payments: logged-in can read (0 rows)
+PASS oms_products: logged-in can read (0 rows)
+PASS oms_trash: logged-in can read (0 rows)
+PASS oms_fraud_list: logged-in can read (0 rows)
+PASS oms_business_records: logged-in can read (0 rows)
+PASS customer_profiles: logged-in can read (0 rows)
+PASS oms_reconciliation_history: logged-in can read (0 rows)
+PASS Customer data is not readable without login
+PASS Saving works (test row written and removed)
+PASS Update permission on oms_orders is granted
+
+RESULT: ALL REQUIRED CHECKS PASSED (0 warnings).

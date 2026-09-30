@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Local browser with mocked Supabase, no live database access",
+  "checks": [
+    "Authenticated app loads",
+    "Pickup return-history rendering",
+    "Opening stock 10 + purchase 4 + inspected good return 1 = 15",
+    "Reserved 1 gives available 14",
+    "Damaged stock 1",
+    "QC manual loss 100 recorded once",
+    "Claim create/edit 50 then 400, no profit duplication",
+    "Packing expense 10 and final profit 125",
+    "Attendance",
+    "Bank difference -1",
+    "JSON nested backup",
+    "Business records synced to mock and survive reload"
+  ],
+  "runtimeErrors": []
+}

@@ -1,0 +1,12 @@
+services:
+  oms:
+    build:
+      context: .
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:?Set Supabase URL in .env}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY:?Set public key in .env}
+        VITE_AUTHORIZED_UID: ${VITE_AUTHORIZED_UID:?Set authorised UID in .env}
+        VITE_ENVIRONMENT: ${VITE_ENVIRONMENT:-test}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"

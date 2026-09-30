@@ -1,0 +1,18 @@
+[Unit]
+Description=Lavanya OMS verified Google Drive backup
+Wants=network-online.target
+After=network-online.target
+[Service]
+Type=oneshot
+User=lavanya-backup
+Group=lavanya-backup
+EnvironmentFile=/etc/lavanya-backup/backup.env
+ExecStart=/opt/lavanya-backup/venv/bin/python /opt/lavanya-backup/oms_backup.py backup
+StateDirectory=lavanya-backup
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/lavanya-backup /etc/lavanya-backup
+TimeoutStartSec=3600

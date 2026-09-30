@@ -1,0 +1,18 @@
+{
+  "release": "6.15.0-rc.4",
+  "production_build": "PASS",
+  "javascript_tests": {
+    "passed": 12,
+    "failed": 0
+  },
+  "backup_unit_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "new_browser_acceptance": "DEFERRED by user",
+  "Windows_install": "PENDING",
+  "live_Google_Drive_upload_restore": "PENDING configuration",
+  "VPS_deployment": "PENDING",
+  "physical_scanner": "PENDING",
+  "atomic_stock_locking": "NOT IMPLEMENTED"
+}

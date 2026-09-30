@@ -1,0 +1,18 @@
+# SIMPLE VPS SETUP (recommended): Caddy serves the built files + automatic HTTPS.
+# Copy to /etc/caddy/Caddyfile on the VPS, then: systemctl reload caddy
+# The DNS A record of the domain must point to this VPS before HTTPS can start.
+lavanyaoms.co.in, www.lavanyaoms.co.in {
+	root * /var/www/lavanya-oms
+	encode gzip
+	@html not path /assets/*
+	header @html Cache-Control "no-store"
+	header /assets/* Cache-Control "public, max-age=31536000, immutable"
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+	try_files {path} /index.html
+	file_server
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "Read-only calculation using supplied 396-order export",
+  "uploaded": 396,
+  "dispatchHistory": 365,
+  "courier": {
+    "Amazon Shipping": 2,
+    "Shadowfax": 168,
+    "Delhivery": 193,
+    "Ekart Logistics": 2
+  },
+  "returnTransit": 95,
+  "returnReceived": 7,
+  "pending": 31
+}

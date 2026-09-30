@@ -1,0 +1,5 @@
+# Replace with your domain; point its DNS to this VPS first.
+lavanyaoms.co.in {
+    encode gzip
+    reverse_proxy 127.0.0.1:8080
+}

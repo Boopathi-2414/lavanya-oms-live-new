@@ -1,0 +1,12 @@
+{
+  "release": "6.15.0-rc.3",
+  "clean_npm_ci": "PASS",
+  "sdk_import": "PASS: 2.108.2",
+  "production_build": "PASS",
+  "unit_tests": "11 passed",
+  "dev_supabase_module_transform": "HTTP 200",
+  "environment": "Linux, Node 24.19.0",
+  "windows_execution": "NOT TESTED",
+  "live_database": "NOT TESTED",
+  "original_windows_error": "Not reproduced; clean reinstall and preflight added"
+}

@@ -1,0 +1,14 @@
+[lavanya_oms]
+host=YOUR_DATABASE_HOST
+port=5432
+dbname=postgres
+user=YOUR_DATABASE_USER
+sslmode=verify-full
+# sslrootcert=/etc/lavanya-backup/provider-ca.crt
+
+[lavanya_restore_test]
+host=SEPARATE_TEST_DATABASE_HOST
+port=5432
+dbname=postgres
+user=YOUR_TEST_DATABASE_USER
+sslmode=verify-full

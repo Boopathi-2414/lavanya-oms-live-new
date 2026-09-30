@@ -1,0 +1,16 @@
+LAVANYA OMS v6.15.0-rc.5 - முதலில் இதைப் படியுங்கள்
+
+1. இந்த folder-ஐ unzip செய்யுங்கள் (பழைய folder-ஐத் தொட வேண்டாம்).
+2. SETUP_ENV.cmd  ->  L (live) அல்லது T (test) type செய்யுங்கள்.
+3. PREFLIGHT.cmd  ->  database சரியா என்று சோதிக்கும்; PREFLIGHT_REPORT.txt-ஐ Claude-க்கு அனுப்புங்கள்.
+4. START_WINDOWS.cmd  ->  Chrome-ல் http://localhost:5174 (5173 அல்ல).
+5. VPS / domain: GO_LIVE_TAMIL.md-ஐப் படி படியாகப் பின்பற்றுங்கள்.
+   ஒவ்வொரு update-க்கும்: DEPLOY_TO_VPS.cmd
+
+.env-ஐ மாற்றிய பிறகு கருப்பு window-ஐ மூடிவிட்டு START_WINDOWS.cmd-ஐ மறுபடி திறக்கவும்
+(பழைய window புதிய .env-ஐப் படிக்காது - "Missing database configuration" இதனால் வரும்).
+
+secret / service_role key, database password - இவற்றை ஒருபோதும் chat-லோ file-லோ போடாதீர்கள்.
+
+rc.5-ல் மாறியது: புதிய professional design மட்டும் (நிறம், எழுத்து, icons, layout).
+Orders, scan, return, payment logic எதுவும் மாற்றப்படவில்லை.

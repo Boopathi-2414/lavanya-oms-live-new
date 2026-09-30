@@ -1,0 +1,22 @@
+{
+  "version": "6.15.0-rc.2",
+  "build": "PASS",
+  "unitTests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "browser": "PASS - mocked Supabase only",
+  "realExportPickup": "PASS - 396 supplied orders",
+  "notExecuted": [
+    "Live Supabase migration and authenticated writes",
+    "Actual VPS Docker/TLS deployment",
+    "Physical scanner",
+    "Concurrent multi-device stock / order edits"
+  ],
+  "releaseDecision": "Release candidate for test acceptance. Not certified production-ready.",
+  "newChecks": [
+    "Company/date claim calendar",
+    "Submission vs follow-up counts",
+    "Supplied logo present in browser"
+  ]
+}
